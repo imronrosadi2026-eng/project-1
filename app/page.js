@@ -1,4 +1,6 @@
 
+import Link from "next/link";
+
 const features = [
   {
     number: "01",
@@ -34,10 +36,10 @@ const steps = [
 
 function Brand() {
   return (
-    <a href="#home" className="brand">
+    <Link href="/" className="brand">
       <img src="/logo/majdah.png" alt="MAJDAH Logo" />
       <span>MAJDAH<span className="brand-dot">.</span></span>
-    </a>
+    </Link>
   );
 }
 
@@ -53,9 +55,15 @@ export default function Home() {
           <a href="#about">Tentang</a>
         </div>
 
-        <a href="#features" className="nav-button">
-          Jelajahi Platform <span>↗</span>
-        </a>
+        <div className="nav-actions">
+          <Link href="/login" className="nav-login">
+            Login
+          </Link>
+
+          <Link href="/register" className="nav-button">
+            Daftar Sekarang <span>↗</span>
+          </Link>
+        </div>
       </nav>
 
       <section className="hero" id="home">
@@ -77,12 +85,12 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <a href="#features" className="primary-button">
-              Jelajahi MAJDAH <span>→</span>
-            </a>
-            <a href="#about" className="secondary-button">
-              Kenali platform
-            </a>
+            <Link href="/register" className="primary-button">
+              Mulai Sekarang <span>→</span>
+            </Link>
+            <Link href="/login" className="secondary-button">
+              Sudah punya akun? Login
+            </Link>
           </div>
 
           <div className="hero-note">
@@ -228,7 +236,9 @@ export default function Home() {
         <p>
           Mulai perjalanan investasi yang lebih terorganisir bersama MAJDAH.
         </p>
-        <a href="#home" className="primary-button">Kembali ke atas ↑</a>
+        <Link href="/register" className="primary-button">
+          Daftar Sekarang ↑
+        </Link>
       </section>
 
       <footer className="footer">
